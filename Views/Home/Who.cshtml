@@ -1,0 +1,50 @@
+﻿@using Moment2.Models
+@model Moment2.Models.People
+
+@{
+    ViewData["Title"] = "Lägg till ny födelsedag";
+}
+
+<div class="content">
+    <h1 class="contentHeader">Lägg till en ny kompis!</h1>
+    <div class="row">
+        
+            <form method="post" id="whoareyou">
+                @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label><br />
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Birthdate" class="control-label"></label><br />
+                    <input asp-for="Birthdate" class="form-control" />
+                    <span asp-validation-for="Birthdate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @Html.DropDownList("FavoriteColor",
+                                        new SelectList(Enum.GetValues(typeof(People.Color))),
+                                       "Välj färg")
+                    <span asp-validation-for="FavoriteColor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="gift" class="control-label"></label><br />
+                    Blommor @Html.RadioButton("gift", "blommor") <br />
+                    Kaka @Html.RadioButton("gift", "kaka") <br />
+                    Katt @Html.RadioButton("gift", "katt") <br />
+                    <span asp-validation-for="gift" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Lägg till" class="btn btn-primary" />
+                </div>
+            </form>
+        
+    </div>
+
+    <div>
+        <a asp-action="Index">Avbryt</a>
+    </div>
+</div>
+
+

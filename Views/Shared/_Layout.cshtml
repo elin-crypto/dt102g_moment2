@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css" type="text/css" />
+</head>
+<body>
+    <header>
+        <div id="logotyp"><a asp-controller="Home" asp-action="Index">När blir det kalas?</a></div>
+        <partial name="_navigation" />
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+</body>
+</html>

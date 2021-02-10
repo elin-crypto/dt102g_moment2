@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["title"] = "Start";
+}
+
+<h1>Ja, det beror ju på vems kalas du ska på</h1>
+<p>Du gick i alla fall in på denna webbplatsen klockan:</p>
+
+<div >
+    <h1>@ViewBag.time</h1>
+    <p>Du har alltså varit här i @ViewBag.inloggad minuter.</p>
+    <a asp-controller="Home" asp-action="Who" class="btn">Lägg till en kompis</a>
+</div>
+
+<partial name="_footer" />

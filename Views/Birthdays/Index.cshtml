@@ -1,0 +1,20 @@
+﻿@model List<Moment2.Models.People>
+@{
+    ViewData["Title"] = "Födelsedagar";
+}
+
+
+
+
+<div class="content">
+    <h1 class="contentHeader">Kommande födelsedagar!</h1>
+    
+    @foreach (var birthday in Model)
+    {
+        <div class="b-child @birthday.FavoriteColor @birthday.gift">
+            <h2 class="bold">@birthday.Name</h2>
+            <p>Fyller @birthday.Age år den @birthday.Birthdate.Day/@birthday.Birthdate.Month</p>
+            <p>@birthday.Name önskar sig @birthday.gift om @birthday.DaysToCake dagar</p>
+        </div>
+    }
+</div>
